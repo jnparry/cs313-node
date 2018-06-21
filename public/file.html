@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Postal Rate Calculator</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="index.js"></script>
+    </head>
+    
+    <body>
+        <h1>Postal Rate Calculator</h1>
+        <form action="/calc" method="get">
+            <label for="weight">Weight: </label>
+            <input type="number" id="weight" name="weight" required><br/>
+            
+            <input type="radio" name="mail" value="stamped" id="stamped" required>
+            <label for="stamped">Letters (Stamped)</label><br/>
+                
+            <input type="radio" name="mail" value="metered" id="metered">
+            <label for="metered">Leters (Metered)</label><br/>
+                
+            <input type="radio" name="mail" value="flats" id="flats">
+            <label for="flats">Large Envelopes (Flats)</label><br/>
+                
+            <input type="radio" name="mail" value="retail" id="retail">
+            <label for="retail">First-Class Package Service - Retail</label><br/>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
