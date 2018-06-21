@@ -1,20 +1,17 @@
+const assert = require('assert');
 const express = require('express');
 const path = require('path');
 const url = require('url');
 const PORT = (process.env.PORT || 5000);
 
 function calcRate(req, res) {
-    var requestUrl = url.parse(req.url, true);
-	console.log("Query parameters: " + JSON.stringify(requestUrl.query));
-    
+    var requestUrl = url.parse(req.url, true);    
     var weight = Number(requestUrl.query.weight);
 	var mail = requestUrl.query.mail;
     var price = parseFloat(0.00);
     
-    if (weight <= 0 || weight > 13) {
-        mail = "zero";
-        
-    }
+    assert(weight > 0);
+    assert(weight <= 13);
     
     if (mail == "stamped") {
         if (weight <= 1)
@@ -84,8 +81,6 @@ function calcRate(req, res) {
             price = 5.50;
     }
     
-//    price.toFixed(2);
-    console.log("Price: " + price);
     var params = {price: price};
     res.render('pages/calc', params);
 }
