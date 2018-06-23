@@ -3,10 +3,26 @@
     <head>
         <title>Postal Rate Calculator</title>
         <link rel="stylesheet" href="/stylesheets/file.css">
+        <script>
+        function backButton() {
+            location.href = "/file.html"
+        }
+        </script>
     </head>
     
     <body>
+        <ul>
+          <li><a href="/file.html">Home</a></li>
+          <li><a href="">News</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+        
         <h1>Calculated Postal Rate</h1>
         <h3>The cost of shipping comes to $<%= price.toFixed(2) %></h3>
+        
+        <div class="buttondiv">
+            <button onclick="backButton()">Recalculate</button>
+        </div>
     </body>
 </html>
